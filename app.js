@@ -1,37 +1,49 @@
-var friend1 = "ImaginaryFriend1";
-var friend2 = "ImaginaryFriend2";
-var friend3 = "ImaginaryFriend3";
-var friend4 = "ImaginaryFriend4";
-var friend5 = "ImaginaryFriend5";
-var friend6 = "ImaginaryFriend6";
-var friend7 = "ImaginaryFriend7";
-var friend8 = "ImaginaryFriend8";
-var friend9 = "ImaginaryFriend9";
-var friend10 = "ImaginaryFriend10";
+//Twenty
 
-var friends = ["ImaginaryFriend1", "ImaginaryFriend2", "ImaginaryFriend3", "ImaginaryFriend4","ImaginaryFriend5" ,"ImaginaryFriend6" ,"ImaginaryFriend7","ImaginaryFriend8","ImaginaryFriend9" ,"ImaginaryFriend10"]
+alert("Welcome to the game twenty, in this game you and the computer will draw a number from 1 - 10 and who ever get the combined number closest to 20 wins. ")
 
-console.log(friends);
+//Variable
 
-friends[1] = "Elon Musk";  
-friends[4] = "Jeff Bezo";   
-friends[8] = "Bill Gates";
+var usertotalcount = 0;
 
-console.log(friends.length);
-console.log(friends.sort());
+var computertotalcount = 0;
 
-var x = friends.pop();
+//Computer Draw number
 
-console.log(friends);
+do{
+    alert("The computer will draw the number first")
 
-friends.push("BOB");
+    alert(` The number computer draw is ${ranN}`)
+    do {
+        //Random number 
+        var ranN = Math.floor(Math.random() * 11)
+        //Computer count
+        //add computercount
+        computertotalcount = computertotalcount + ranN;
+        //Computer Total
+        alert(`The total computer count is ${computertotalcount}`)
+    }while(computertotalcount < 16)
 
-console.log(friends);
 
-friends.shift();
+    alert("Now its User's turn")
 
-console.log(friends);
+    do {
+        alert(`The number you draw is ${ranN}`)
+        //Random number
+        var ranN = Math.floor(Math.random() * 11)
 
-friends.unshift("TOM");
+        alert(`The number you draw is ${ranN}`)
+        //User count
 
-console.log(friends);
+        usertotalcount = usertotalcount + ranN;
+
+        var userres = prompt(" Do you want to keep draw the number? press y to keep drawing")
+
+    }while (userres == "y")
+
+    var useragain = prompt("Do you want to play agian? press y to play again!");
+
+    if (computertotalcount > usertotalcount ){
+        alert(" The computer win")
+    }else (alert("The user win!"))  
+}while(useragain == y);
