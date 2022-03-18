@@ -13,10 +13,14 @@ var computertotalcount = 0;
 do{
     alert("The computer will draw the number first")
 
-    alert(` The number computer draw is ${ranN}`)
     do {
         //Random number 
         var ranN = Math.floor(Math.random() * 11)
+
+
+        alert(` The number computer draw is ${ranN}`);
+        
+        
         //Computer count
         //add computercount
         computertotalcount = computertotalcount + ranN;
@@ -28,22 +32,31 @@ do{
     alert("Now its User's turn")
 
     do {
-        alert(`The number you draw is ${ranN}`)
+        var userranN = Math.floor(Math.random() * 11)
+        
+        alert(`The number you draw is ${userranN}`)
         //Random number
-        var ranN = Math.floor(Math.random() * 11)
-
-        alert(`The number you draw is ${ranN}`)
+        
         //User count
 
-        usertotalcount = usertotalcount + ranN;
+        usertotalcount = usertotalcount + userranN;
+
+        alert(`Your total number is ${usertotalcount}`)
 
         var userres = prompt(" Do you want to keep draw the number? press y to keep drawing")
+    }while ((userres == "y" ) && (usertotalcount == 20))
 
-    }while (userres == "y")
+    
 
-    var useragain = prompt("Do you want to play agian? press y to play again!");
+    alert(`The total is score for computer is ${computertotalcount}, the total score for user is ${usertotalcount}`)
 
     if (computertotalcount > usertotalcount ){
         alert(" The computer win")
     }else (alert("The user win!"))  
-}while(useragain == y);
+
+    var useragain = prompt("Do you want to play agian? press y to play again!");
+
+    }while(useragain == "y");
+
+    
+    
