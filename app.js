@@ -1,18 +1,36 @@
-//Twenty
+//Functions
+function askname() {
+    var name = prompt("What is your name")
+    return name
+}
 
-alert("Welcome to the game twenty, in this game you and the computer will draw a number from 1 - 10 and who ever get the combined number closest to 20 wins. ")
+function greeting(a) {
+    alert(`Welcome to the Twenty Game , ${a}`)
+}
 
-//Variable
+function randN() {
+    var randomN = Math.floor(Math.random() * 10) + 1;
+    return randomN
+}
 
-var usertotalcount = 0;
+function finalscore() {
+    alert(`The total is score for computer is ${computertotalcount}, the total score for user is ${usertotalcount}`)
+}
 
-var computertotalcount = 0;
+function finalCount() {
+    alert(`The total is score for computer is ${computertotalcount}, the total score for user is ${usertotalcount}`)
+}
 
-//Computer Draw number
+function wincondition() {
+    if (computertotalcount < 0){
+        alert(" The computer win")
+    }else if (usertotalcount < 0){
+        alert("The user win")
+    }else(alert("It's a draw!"))
+}
 
-do{
-    alert("The computer will draw the number first")
 
+function computeraction() {
     do {
         //Random number 
         var ranN = Math.floor(Math.random() * 11)
@@ -27,10 +45,10 @@ do{
         //Computer Total
         alert(`The total computer count is ${computertotalcount}`)
     }while(computertotalcount < 16)
+}
 
 
-    alert("Now its User's turn")
-
+function useraction() {
     do {
         var userranN = Math.floor(Math.random() * 11)
         
@@ -44,19 +62,46 @@ do{
         alert(`Your total number is ${usertotalcount}`)
 
         var userres = prompt(" Do you want to keep draw the number? press y to keep drawing")
-    }while ((userres == "y" ) && (usertotalcount == 20))
+    }while (userres == "y" )
+}
 
-    
+function countCompare() {
+    var userCountCompare = usertotalcount - 20;
+    var computerCountCompare = computertotalcount - 20;
+}
 
-    alert(`The total is score for computer is ${computertotalcount}, the total score for user is ${usertotalcount}`)
+//Variable 
+var usertotalcount = 0;
 
-    if (computertotalcount > usertotalcount ){
-        alert(" The computer win")
-    }else (alert("The user win!"))  
+var computertotalcount = 0;
+
+//Start
+greeting(askname());
+
+do{
+    alert("The computer will the draw the number first")
+
+    computeraction();
+
+    alert(" Now is your turn!")
+
+    useraction();
+
+    finalCount();
+
+    wincondition();
+
+    countCompare();
+
+    computertotalcount = 0;
+
+    usertotalcount = 0;
 
     var useragain = prompt("Do you want to play agian? press y to play again!");
+}while(useragain == "y");
 
-    }while(useragain == "y");
+
 
     
+
     
